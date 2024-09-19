@@ -1,6 +1,7 @@
 import React from "react";
 
+
 const SideDrawer = (props) => {
-  return <aside>{props.children}</aside>;
+  return <aside onClick={props.onClick}>{props.children}</aside>;
 };
 export default SideDrawer;

@@ -10,6 +10,7 @@ import Users from "./user/Pages/Users";
 import NewPlace from "./places/Pages/NewPlace";
 
 import MainNavigation from "./Shared/Navigation/MainNavigation";
+import UserPlaces from "./places/Pages/UserPlaces";
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Users />} />
           <Route path="/places/new" element={<NewPlace />} />
+          <Route path="/:userId/places" element={<UserPlaces />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </main>
