@@ -2,19 +2,26 @@ import React from "react";
 
 const PlaceItem = (props) => {
   return (
-    <li className="rounded bg-white w-2/6 m-10 flex flex-col items-center">
+    <li className="min-w-56 rounded max-w-md bg-white w-2/6 m-10 flex flex-col items-center">
       <div>
-        <img className="" src={props.image} alt={props.title} />
+        <img className="rounded" src={props.image} alt={props.title} />
       </div>
-      <div className=" m-3 flex flex-col items-center">
-        <h2>{props.title}</h2>
-        <h3>{props.address}</h3>
-        <p>{props.description}</p>
+      <div className="max-w-96 m-3 flex flex-col items-center justify-center">
+        <h2 className="text-xl font-bold mb-2">{props.title}</h2>
+        <h3 className="text-lg font-bold mb-2">{props.address}</h3>
+        <p className="text-md">{props.description}</p>
       </div>
-      <div>
-        <button>VIEW ON MAP</button>
-        <button>EDIT</button>
-        <button>DELETE</button>
+      <span className="block w-full h-0.5 bg-gray-300" />
+      <div className="my-3 flex flex-col space-x-0 md:flex-row md:space-x-3">
+        <button className="my-2 rounded py-1 px-3 border-2 text-yellow-600 border-yellow-500 hover:bg-yellow-500 hover:text-white w-full md:w-auto">
+          VIEW ON MAP
+        </button>
+        <button className="my-2 px-3 py-1 rounded bg-yellow-500 hover:bg-yellow-600 w-full md:w-auto">
+          EDIT
+        </button>
+        <button className="my-2 px-3 py-1 rounded bg-red-500 hover:bg-red-600 w-full md:w-auto">
+          DELETE
+        </button>
       </div>
     </li>
   );

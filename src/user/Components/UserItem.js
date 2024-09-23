@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const UserItem = (props) => {
   return (
     <li>
-    <Link to={`/${props.id}/places`}>\
+    <Link to={`/${props.id}/places`}>
       <div className="group w-96 p-3 mt-7 mx-auto rounded-md bg-gray-950 hover:bg-yellow-500 flex justify-start items-center gap-10 ">
         <div>
           <img
