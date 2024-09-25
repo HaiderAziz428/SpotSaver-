@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const PlaceItem = (props) => {
   return (
@@ -17,7 +18,7 @@ const PlaceItem = (props) => {
           VIEW ON MAP
         </button>
         <button className="my-2 px-3 py-1 rounded bg-yellow-500 hover:bg-yellow-600 w-full md:w-auto">
-          EDIT
+          <Link to={`/places/${props.id}`}>EDIT</Link>
         </button>
         <button className="my-2 px-3 py-1 rounded bg-red-500 hover:bg-red-600 w-full md:w-auto">
           DELETE
