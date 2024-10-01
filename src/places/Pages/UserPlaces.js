@@ -19,7 +19,7 @@ const DUMMY_PLACES = [
   },
   {
     id: "p2",
-    title: "Eiffel Tower",
+    title: " Tower",
     description:
       "The Eiffel Tower was absolutely breathtaking, offering a truly unique experience. Its charm and beauty were captivating, and I was pleasantly surprised by the short lines to go up.",
     imageUrl:

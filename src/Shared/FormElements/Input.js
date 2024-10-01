@@ -21,8 +21,8 @@ const inputReducer = (state, action) => {
 
 const Input = (props) => {
   const [inputState, dispatch] = useReducer(inputReducer, {
-    value: props.value || "",
-    isValid: props.valid || false, // Use props.valid to set initial validity
+    value: props.initialValue || "",
+    isValid: props.initialValid || false, // Use props.valid to set initial validity
     isTouched: false, // Start as untouched, will be set onBlur
   });
 
@@ -56,7 +56,7 @@ const Input = (props) => {
         placeholder={placeholder}
         onChange={changeHandler}
         onBlur={touchHandler}
-        value={value}
+        value={inputState.value}
         className={`${props.InputClass} ${
           !isValid && isTouched ? "ring-red-500" : ""
         }`}
@@ -67,7 +67,7 @@ const Input = (props) => {
         rows={rows || 3}
         onChange={changeHandler}
         onBlur={touchHandler}
-        value={value}
+        value={inputState.value}
         className={`${props.InputClass} ${
           !isValid && isTouched ? "ring-red-500" : ""
         }`}
