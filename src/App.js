@@ -12,6 +12,7 @@ import NewPlace from "./places/Pages/NewPlace";
 import MainNavigation from "./Shared/Navigation/MainNavigation";
 import UserPlaces from "./places/Pages/UserPlaces";
 import UpdatePlace from "./places/Pages/UpdatePlace";
+import Auth from "./user/Pages/Auth";
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
           <Route path="/places/new" element={<NewPlace />} />
           <Route path="/:userId/places" element={<UserPlaces />} />
           <Route path="/places/:placeId" element={<UpdatePlace />} />
+          <Route path="/auth" element={<Auth />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </main>
