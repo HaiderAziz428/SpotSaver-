@@ -6,6 +6,7 @@ module.exports = {
       fontFamily: {
         bebas: ["Bebas Neue", "sans-serif"],
         marker: ["Permanent Marker", "cursive"],
+        poppins: ["Poppins", "sans-serif"],
       },
     },
   },

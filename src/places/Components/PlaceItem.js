@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import Modal from "../../Shared/UIElements/Modal";
 import Map from "../../Shared/UIElements/Map";
+import { AuthContext } from "../../Shared/context/auth-context";
 
 const PlaceItem = (props) => {
+  const auth = useContext(AuthContext);
   const [showMap, setShowMap] = useState(false);
   const [showConfirmModal, setShowConfirmModal] = useState(false);
 
@@ -85,15 +87,19 @@ const PlaceItem = (props) => {
           >
             VIEW ON MAP
           </button>
-          <button className="my-2 px-3 py-1 rounded bg-yellow-500 hover:bg-yellow-600  ">
-            <Link to={`/places/${props.id}`}>EDIT</Link>
-          </button>
-          <button
-            className="my-2 px-3 py-1 rounded bg-red-500 hover:bg-red-600 w-full md:w-auto"
-            onClick={showDeleteWanringHandler}
-          >
-            DELETE
-          </button>
+          {auth.isLoggedIn && (
+            <button className="my-2 px-3 py-1 rounded bg-yellow-500 hover:bg-yellow-600  ">
+              <Link to={`/places/${props.id}`}>EDIT</Link>
+            </button>
+          )}
+          {auth.isLoggedIn && (
+            <button
+              className="my-2 px-3 py-1 rounded bg-red-500 hover:bg-red-600 w-full md:w-auto"
+              onClick={showDeleteWanringHandler}
+            >
+              DELETE
+            </button>
+          )}
         </div>
       </li>
     </React.Fragment>
